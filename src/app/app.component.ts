@@ -6,10 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nome = "Diego";
+  nome = "";
+  funcionarios = [];
+  show = false;
 
   adicionar(nome: string) {
+    this.funcionarios.push(nome);
     this.nome = nome;
+    this.show = true;
+    this.showAlert();
+  }
+
+  showAlert(){
+    setTimeout(() => {
+      this.show = false;
+      this.nome = "";
+    }
+      , 2000);
   }
 
   // adicionar() {
