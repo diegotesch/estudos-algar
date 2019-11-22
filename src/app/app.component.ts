@@ -13,16 +13,20 @@ export class AppComponent {
   adicionar(nome: string) {
     this.funcionarios.push(nome);
     this.nome = nome;
-    this.show = true;
     this.showAlert();
   }
 
   showAlert(){
+   this.trocaStatus();
     setTimeout(() => {
-      this.show = false;
+      this.trocaStatus();
       this.nome = "";
     }
       , 2000);
+  }
+
+  trocaStatus(){
+    this.show = !this.show;
   }
 
   // adicionar() {
