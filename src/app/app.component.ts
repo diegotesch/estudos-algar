@@ -12,15 +12,5 @@ export class AppComponent {
   aoAdicionar(funcionario){
     this.funcionarios.push(funcionario);
   }
-  // adicionar() {
-
-  //   const numero = Math.round(Math.random() * 100);
-  //   this.nome = 'Diego '+numero;
-  // }
-
-  // alterarNome(event: any){
-  //   // console.log(event.target.value);
-  //   this.nome = event.target.value
-  // }
-
+  
 }
