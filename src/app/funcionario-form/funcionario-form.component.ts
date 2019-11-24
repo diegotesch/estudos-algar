@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FuncionarioService } from './funcionario.service';
+
 
 @Component({
   selector: 'app-funcionario-form',
@@ -7,36 +9,45 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class FuncionarioFormComponent  {
 
-  nome = "";
-  lastId = 0;
-  show = false;
-  @Output() funcionarioAdicionado = new EventEmitter();
+  funcionarioService: FuncionarioService;
 
-  adicionar() {
-    const funcionario = {
-      id: ++this.lastId,
-      nome: this.nome
-    };
-
-    this.funcionarioAdicionado.emit(funcionario);
-
-    this.showAlert();
+  constructor() {
+    this.funcionarioService = new FuncionarioService();
   }
 
-  showAlert(){
-   this.trocaStatus();
-    setTimeout(() => {
-      this.trocaStatus();
-    }
-      , 2000);
+  adicionar(nome: string) {
+    this.funcionarioService.adicionar(nome)
   }
+  // nome = "";
+  // lastId = 0;
+  // show = false;
+  // @Output() funcionarioAdicionado = new EventEmitter();
 
-  trocaStatus(){
-    this.show = !this.show
-  }
+  // adicionar() {
+  //   const funcionario = {
+  //     id: ++this.lastId,
+  //     nome: this.nome
+  //   };
 
-  limpaCampo(){
-    this.nome ="";
-  }
+  //   this.funcionarioAdicionado.emit(funcionario);
+
+  //   this.showAlert();
+  // }
+
+  // showAlert(){
+  //  this.trocaStatus();
+  //   setTimeout(() => {
+  //     this.trocaStatus();
+  //   }
+  //     , 2000);
+  // }
+
+  // trocaStatus(){
+  //   this.show = !this.show
+  // }
+
+  // limpaCampo(){
+  //   this.nome ="";
+  // }
 
 }

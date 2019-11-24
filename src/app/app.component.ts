@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { FuncionarioService } from './funcionario-form/funcionario.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +11,18 @@ export class AppComponent {
 
   funcionarios = [];
 
-  aoAdicionar(funcionario){
-    this.funcionarios.push(funcionario);
+  funcionarioService: FuncionarioService;
+
+  constructor() {
+    this.funcionarioService = new FuncionarioService();
   }
+
+  ngOnInit() {
+    this.funcionarios = this.funcionarioService.consultar();
+  }
+
+  // aoAdicionar(funcionario){
+  //   this.funcionarios.push(funcionario);
+  // }
   
 }

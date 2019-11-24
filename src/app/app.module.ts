@@ -12,6 +12,8 @@ import { FormularioEstudoComponent } from './formulario-estudo/formulario-estudo
 import { BotoesModule } from './botoes/botoes.module';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
+import { FuncionarioService } from './funcionario-form/funcionario.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     BotoesModule,
     NavegacaoModule
   ],
-  providers: [],
+  providers: [
+    FuncionarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
