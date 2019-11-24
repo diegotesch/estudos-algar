@@ -6,35 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nome = "";
-  lastId = 0;
+
   funcionarios = [];
-  show = false;
 
-  adicionar() {
-    this.funcionarios.push({
-      id: ++this.lastId,
-      nome: this.nome
-    });
-    this.showAlert();
+  aoAdicionar(funcionario){
+    this.funcionarios.push(funcionario);
   }
-
-  showAlert(){
-   this.trocaStatus();
-    setTimeout(() => {
-      this.trocaStatus();
-    }
-      , 2000);
-  }
-
-  trocaStatus(){
-    this.show = !this.show
-  }
-
-  limpaCampo(){
-    this.nome ="";
-  }
-
   // adicionar() {
 
   //   const numero = Math.round(Math.random() * 100);
