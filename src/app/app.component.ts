@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nome = "";
+  lastId = 0;
   funcionarios = [];
   show = false;
 
   adicionar() {
     this.funcionarios.push({
-      id: this.funcionarios.length +1,
+      id: ++this.lastId,
       nome: this.nome
     });
     this.showAlert();
