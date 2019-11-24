@@ -8,6 +8,7 @@ import { CardComponent } from './card/card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
+import { FormularioEstudoComponent } from './formulario-estudo/formulario-estudo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PipesComponent } from './pipes/pipes.component';
     CardComponent,
     FuncionarioFormComponent,
     CampoColoridoDirective,
-    PipesComponent
+    PipesComponent,
+    FormularioEstudoComponent
   ],
   imports: [
     BrowserModule,
