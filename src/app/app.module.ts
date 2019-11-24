@@ -9,6 +9,8 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormularioEstudoComponent } from './formulario-estudo/formulario-estudo.component';
+import { BotoesModule } from './botoes/botoes.module';
+import { NavegacaoModule } from './navegacao/navegacao.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormularioEstudoComponent } from './formulario-estudo/formulario-estudo
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BotoesModule,
+    NavegacaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
