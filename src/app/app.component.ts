@@ -10,9 +10,11 @@ export class AppComponent {
   funcionarios = [];
   show = false;
 
-  adicionar(nome: string) {
-    this.funcionarios.push(nome);
-    this.nome = nome;
+  adicionar() {
+    this.funcionarios.push({
+      id: this.funcionarios.length +1,
+      nome: this.nome
+    });
     this.showAlert();
   }
 
@@ -20,13 +22,16 @@ export class AppComponent {
    this.trocaStatus();
     setTimeout(() => {
       this.trocaStatus();
-      this.nome = "";
     }
       , 2000);
   }
 
   trocaStatus(){
-    this.show = !this.show;
+    this.show = !this.show
+  }
+
+  limpaCampo(){
+    this.nome ="";
   }
 
   // adicionar() {
