@@ -1,0 +1,10 @@
+.fd-nome {
+  text-transform: uppercase;
+  color: #00f;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.card{
+  margin-bottom: 20px;
+}

@@ -1,6 +1,8 @@
-<div class="card">
+<div class="card" [ngStyle]="getCardStyle()">
   <img src="https://randomuser.me/api/portraits/men/{{card.id}}.jpg" class="card-img-top" alt="...">
-  <div class="card-block">
-    {{card.nome}}
+  <div class="card-block fd-nome">
+    <span class="badge" [ngClass]="{ 'badge-danger' : isAdmin(), 'badge-primary' : !isAdmin() }" >
+      {{card.nome}}
+    </span>
   </div>
 </div>
