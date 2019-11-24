@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div *ngIf="userForm.invalid" class="alert alert-danger">
+  <div *ngIf="userForm.invalid && userForm.dirty" class="alert alert-danger">
     Preencha todos os campos corretamente.
   </div>
 
@@ -9,15 +9,16 @@
       <label class="form-control-label">Nome</label>
       <input name="nome" type="text" class="form-control" [(ngModel)]="cliente.nome" required minlength="10" #nome="ngModel" >
 
-      <div *ngIf="nome.hasError('required')">Informe um nome </div>
-      <div *ngIf="nome.hasError('minlength')">Nome deve conter "X" caracteres </div>
+
+      <div *ngIf="nome.hasError('required') && nome.dirty">Informe um nome </div>
+      <div *ngIf="nome.hasError('minlength') && nome.dirty">Nome deve conter "X" caracteres </div>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input name="email" type="text" class="form-control" [(ngModel)]="cliente.email" email #email="ngModel">
+      <input name="email" type="text" class="form-control" [(ngModel)]="cliente.email" email required #email="ngModel">
 
-      <div *ngIf="email.hasError('email')">Informe um email válido </div>
+      <div *ngIf="email.hasError('email') && email.dirty">Informe um email válido </div>
     </div>
 
     <div class="form-group">
@@ -26,7 +27,7 @@
         <option value="">Selecione</option>
         <option *ngFor="let profissao of profissoes" [value]="profissao">{{ profissao }}</option>
       </select>
-      <div *ngIf="profissao.hasError('required')">Selecione uma profissão </div>
+      <div *ngIf="profissao.hasError('required') && profissao.touched">Selecione uma profissão </div>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Salvar</button>

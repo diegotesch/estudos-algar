@@ -25,6 +25,8 @@ export class FormularioEstudoComponent {
 
     console.log(form.value);
     console.log(this.cliente);
+
+    form.reset({ profissao: '' });
   }
 
 }
@@ -33,6 +35,6 @@ class Cliente {
 
   nome: string;
   email: string;
-  profissao: string;
+  profissao: string = '';
 
 }
