@@ -11,11 +11,7 @@ export class AppComponent {
 
   funcionarios = [];
 
-  funcionarioService: FuncionarioService;
-
-  constructor() {
-    this.funcionarioService = new FuncionarioService();
-  }
+  constructor(private funcionarioService: FuncionarioService) {  }
 
   ngOnInit() {
     this.funcionarios = this.funcionarioService.consultar();
